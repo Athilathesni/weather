@@ -1,53 +1,32 @@
-function getweather(){
+
 const apikey=`871a585f5d98d79c634071ca97fd9092`;
-const city= document.getElementById('city').value;
 
-if(!city){
-    alert('please enter a city')
-    return;
-}
-const currentWeatherUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
-const forecastUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
+const locationInput = document.getElementById('locationInput');
+const searchButton = document.getElementById('searchButton');
+const locationElement = document.getElementById('location');
+const temperatureElement = document.getElementById('temperature');
+const descriptionElement = document.getElementById('description');
 
-fetch(currentWeatherUrl)
-.then(Response=>Response.json())
-.then(data =>{
-    displayWeather(data)
-})
-.catch(error =>{
-    console.error('error fetching current weather data:',error);
-    alert('error fetching current weather data please try again');
-})
-fetch(forecastUrl)
-.then(Response=>Response.json())
-.then(data=>{
-    displayHourlyforecast(data.list);
-})
-.catch(error=>{
-    console.error('error fetching hourly forecast data:',error);
-    alert('error fetching hourly forecast data.please try again.')
-})
-}
-function displayWeather(data){
-    const tempDivInfo=document.getElementById('temp-div')
-    const weatherInfoDiv=document.getElementById('weather-info')
-    const weathericon=document.getElementById('weather-icon')
-    const hourlyforecastDiv=document.getElementById('hourly-forecast')
-
-    weatherInfoDiv.innerHTML='';
-    hourlyforecastDiv.innerHTML='';
-    tempDivInfo.innerHTML='';
-}
-
-
-
-function displayWeather(data){
-    if(data.cod === '404'){
-        weatherInfoDiv.innerHTML=`<p>${data.message}</p>`
+searchButton.addEventListener('click', () => {
+    const location = locationInput.value;
+    if (location) {
+        fetchWeather(location);
     }
-    else{
-        const cityName =data.cityName;
-        
-    }
+});
+
+function fetchWeather(location) {
+    const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            locationElement.textContent = data.name;
+            temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+            descriptionElement.textContent = data.weather[0].description;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
 }

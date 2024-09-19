@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <div id="wcontainer">
-        <h3>WEATHER APP</h3>
-        <input type="text" id="city" placeholder="enter city">
-        <button onclick="getweather()">Search</button>
-        <img src="weather-icon" alt="weathericon">
-        <div id="temp-div"></div>
-        <div id="weather-info"></div>
-        <div id="hourly-forecast"></div>
+    
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="locationInput" placeholder="Enter a city">
+        <button id="searchButton">Search</button>
+        <div class="weather-info">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
     </div>
-
 
 
 
