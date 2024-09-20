@@ -7,18 +7,34 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    
-    <div class="container">
-        <h1>Weather App</h1>
-        <input type="text" id="locationInput" placeholder="Enter a city">
-        <button id="searchButton">Search</button>
-        <div class="weather-info">
-            <h2 id="location"></h2>
-            <p id="temperature"></p>
-            <p id="description"></p>
+
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name">
+            <button type="button">search</button>
+        </div>
+        <div class="weather">
+            <img src="./weather.png" class="weather-icon">
+            <h2 class="temp">22c</h2>
+            <h3 class="city">newyork</h3>
+            <div class="details">
+                <div class="col">
+                    <img src="./humidity-icon-2048x1675-xxsge5os.png" alt="">
+                <div>
+                <p class="humidity">50%</p>
+                <p>humidity</p>
+            </div>
+            </div>
+            <div class="col">
+                <img src="./wind-icon-2048x1563-xzh65ux5.png" alt="">
+                <div>
+                    <p class="wind">15 km/h</p>
+                    <p>wind search</p>
+                </div>
+            </div>
         </div>
     </div>
-
+</div>
 
 
 

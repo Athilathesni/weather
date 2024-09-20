@@ -1,32 +1,17 @@
 
-const apikey=`871a585f5d98d79c634071ca97fd9092`;
+// const apikey=`ac5a6e4296bb2dd0c74c8904e3b17898`;
 
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+// const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=bangalore&appid={}';
 
-const locationInput = document.getElementById('locationInput');
-const searchButton = document.getElementById('searchButton');
-const locationElement = document.getElementById('location');
-const temperatureElement = document.getElementById('temperature');
-const descriptionElement = document.getElementById('description');
+// async function checkweather(){
+//     const response=await fetch(apiUrl+'&appid=${apikey}')
+//     var data=await response.json()
 
-searchButton.addEventListener('click', () => {
-    const location = locationInput.value;
-    if (location) {
-        fetchWeather(location);
-    }
-});
-
-function fetchWeather(location) {
-    const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            locationElement.textContent = data.name;
-            temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
-            descriptionElement.textContent = data.weather[0].description;
-        })
-        .catch(error => {
-            console.error('Error fetching weather data:', error);
-        });
-}
+//     console.log(data);
+    
+//     document.querySelector(".city").innerHTML=data.name
+//     document.querySelector(".temp").innerHTML=data.temp
+//     document.querySelector(".humidity").innerHTML=data.humidity
+//     document.querySelector(".wind").innerHTML=data.wind
+// }
+// checkweather();
