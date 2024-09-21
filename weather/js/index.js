@@ -14,24 +14,18 @@ async function checkweather(city){
     // console.log(data);
     
     document.querySelector(".city").innerHTML=data.name;
-    document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+ "c";
+    document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+ "°C";
     document.querySelector(".humidity").innerHTML=data.main.humidity+ "%";
     document.querySelector(".wind").innerHTML=data.wind.speed+ "km/h";
 
 if(data.weather[0].main=="Cloud"){
-    weatherIcon.src="./cloudy.png"
+    weatherIcon.src="./cloude.png"
 }
-else if(data.weather[0].main=="clear"){
-    weatherIcon.src="./clear-sky.png"
+else if(data.weather[0].main=="Clear"){
+    weatherIcon.src="./clear.png"
 }
-if(data.weather[0].main=="rain"){
-    weatherIcon.src="./png-clipart-rain-meteorology-cloud-thunderstorm-lightning-rain-weather-icon-material-free-to-pull-free-logo-design-template-camera-icon.png"
-}
-if(data.weather[0].main=="Drizzle"){
-    weatherIcon.src="./5753018.webp"
-}
-if(data.weather[0].main=="Mist"){
-    weatherIcon.src="./8449649.png"
+else if(data.weather[0].main=="rain"){
+    weatherIcon.src="./rain.jpg"
 }
 
 document.querySelector(".weather").style.display="block"
