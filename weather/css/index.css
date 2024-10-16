@@ -24,8 +24,6 @@ body{
     padding: 40px 30px;
     text-align: center;
     opacity: 0.6;
-    
-    
 }
 .search{
     width: 400px;
@@ -44,17 +42,17 @@ body{
     margin-top: 10px;
     font-size: 15px;
 }
-.search button{
-    border: 0;
-    outline: 0;
+ .search button{
     width: 100px;
     height: 30px;
+    border: 0;
+    outline: 0;
     border-radius: 8px;
-    cursor: pointer;
     padding: 20px;
     font-size: 20px;
-    
-}
+    margin-left: 10px;
+    margin-top: 10px;
+ }
 .weather-icon{
     width: 200px;
     margin-top: 30px;
@@ -92,3 +90,16 @@ body{
 .weather{
     display: none;
 }
+
+
+/* .clear {
+    background-image: url('clear.png');
+}
+
+.rain {
+    background-image: url('rain.png');
+}
+
+.cloude{
+    background-image: url('cloude.png');
+} */
